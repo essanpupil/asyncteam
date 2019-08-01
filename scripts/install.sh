@@ -38,8 +38,8 @@ wget https://github.com/mozilla/geckodriver/releases/download/v0.24.0/geckodrive
 tar xvzf geckodriver-v0.24.0-linux64.tar.gz
 ls -l
 
-mv geckodriver /usr/local/share
-ln -sf /usr/local/share/geckodriver /usr/local/bin
+mv geckodriver /usr/local/share/geckodriver
+ln -sf /usr/local/share/geckodriver /usr/local/bin/geckodriver
 echo "---    GECKODRIVER Finished    ---"
 
 echo "***********************************************"

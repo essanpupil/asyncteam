@@ -11,6 +11,6 @@ class IntegrationTest(StaticLiveServerTestCase):
         cap["marionette"] = False
         ff_options = Options()
         ff_options.headless = True
-        browser = webdriver.Firefox(options=ff_options, capabilities=cap)
+        browser = webdriver.Firefox(options=ff_options, capabilities=cap, executable_path="/usr/local/bin/geckodriver")
         browser.get(self.live_server_url)
         self.assertEqual(browser.title, "Welcome to AsyncTeam")
