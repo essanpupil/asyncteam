@@ -35,7 +35,7 @@ fi
 
 cd ~
 wget https://github.com/mozilla/geckodriver/releases/download/v0.24.0/geckodriver-v0.24.0-linux64.tar.gz
-tar xvjf geckodriver-v0.24.0-linux64.tar.gz
+tar xvzf geckodriver-v0.24.0-linux64.tar.gz
 
 mv geckodriver-v0.24.0-linux64 /usr/local/share
 ln -sf /usr/local/share/geckodriver-v0.24.0-linux64/geckodriver /usr/local/bin
