@@ -13,8 +13,7 @@ echo "---OS dependencies---"
 echo "***********************************************"
 apt-get -y install python3-pip
 apt-get -y install python3-dev python3-setuptools
-apt-get -y install firefox
-which firefox
+apt-get -y install iceweasel
 # .....
 # .....
 # .....
