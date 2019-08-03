@@ -5,6 +5,7 @@ class Business(models.Model):
     name = models.CharField(max_length=255)
     tagline = models.CharField(max_length=255)
     description = models.TextField()
+    long_description = models.TextField()
 
     def __str__(self):
         return self.name
@@ -13,6 +14,7 @@ class Business(models.Model):
 class Card(models.Model):
     business = models.ForeignKey(Business, on_delete=models.CASCADE)
     name = models.CharField(max_length=128)
+    html_code = models.TextField()
 
     def __str__(self):
         return self.name
@@ -21,6 +23,8 @@ class Card(models.Model):
 class Page(models.Model):
     business = models.ForeignKey(Business, on_delete=models.CASCADE)
     name = models.CharField(max_length=255)
+    slug = models.SlugField()
+    html_code = models.TextField()
 
     def __str__(self):
         return self.name
