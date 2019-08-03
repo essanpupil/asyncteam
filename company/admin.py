@@ -1,3 +1,7 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import Business, Card, Page
+
+admin.site.register(Business)
+admin.site.register(Card)
+admin.site.register(Page)
