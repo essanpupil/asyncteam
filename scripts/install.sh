@@ -14,7 +14,6 @@ echo "***********************************************"
 apt-get -y install python3-pip
 apt-get -y install python3-dev python3-setuptools
 apt-get -y install firefox-esr
-apt-get -y install selenium-firefoxdriver
 # .....
 # .....
 # .....
@@ -35,16 +34,16 @@ if [[ $EUID -ne 0 ]]; then
     exit 1
 fi
 
-#cd ~
-#wget https://github.com/mozilla/geckodriver/releases/download/v0.24.0/geckodriver-v0.24.0-linux64.tar.gz
-#tar xvzf geckodriver-v0.24.0-linux64.tar.gz
-#ls -l
+cd ~
+wget https://github.com/mozilla/geckodriver/releases/download/v0.24.0/geckodriver-v0.24.0-linux64.tar.gz
+tar xvzf geckodriver-v0.24.0-linux64.tar.gz
+ls -l
 
-#mv geckodriver /usr/local/share/geckodriver
-#chmod a+x /usr/local/share/geckodriver
+mv geckodriver /usr/local/share/geckodriver
+chmod a+x /usr/local/share/geckodriver
 
-#ln -sf /usr/local/share/geckodriver /usr/local/bin/geckodriver
-#echo "---    GECKODRIVER Finished    ---"
+ln -sf /usr/local/share/geckodriver /usr/local/bin/geckodriver
+echo "---    GECKODRIVER Finished    ---"
 
 echo "***********************************************"
 echo "---          Done Installing Stuff          ---"
