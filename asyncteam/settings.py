@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
 
     'timeline.apps.TimelineConfig',
+    'company.apps.CompanyConfig',
 
     'allauth',
     'allauth.account',
