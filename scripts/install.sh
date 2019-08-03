@@ -41,6 +41,8 @@ tar xvzf geckodriver-v0.24.0-linux64.tar.gz
 ls -l
 
 mv geckodriver /usr/local/share/geckodriver
+chmod a+x /usr/local/share/geckodriver
+
 ln -sf /usr/local/share/geckodriver /usr/local/bin/geckodriver
 echo "---    GECKODRIVER Finished    ---"
 
