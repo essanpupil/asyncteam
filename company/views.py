@@ -5,7 +5,7 @@ from company.models import Business, Page
 
 
 def home(request):
-    business = Business.objects.first()
+    business = Business.objects.last()
     business_pages = Page.objects.filter(business=business, display_in_navbar=True)
     return render(request, 'company/home.html', {'business': business, 'business_pages': business_pages})
 
