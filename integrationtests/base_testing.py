@@ -9,7 +9,7 @@ class IntegrationTest(StaticLiveServerTestCase):
 
     def setUp(self) -> None:
         ff_options = Options()
-        ff_options.headless = False
+        ff_options.headless = True
         self.browser = webdriver.Firefox(options=ff_options)
 
     def tearDown(self) -> None:
@@ -30,4 +30,3 @@ class IntegrationTest(StaticLiveServerTestCase):
         )
         page.save()
         return page
-
