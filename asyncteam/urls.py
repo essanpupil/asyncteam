@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.contrib import admin
 from django.urls import path, include
 from django.views.generic import RedirectView
@@ -6,6 +7,14 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('favicon.ico', RedirectView.as_view(url='/static/company/favicon/favicon.ico')),
     path('accounts/', include('allauth.urls')),
+    path('accounts/profile/', include('account_profile.urls')),
     path('timeline/', include('timeline.urls')),
     path('', include('company.urls')),
 ]
+
+if settings.DEBUG:
+    import debug_toolbar
+    urlpatterns = [
+        path('__debug__/', include(debug_toolbar.urls)),
+
+    ] + urlpatterns
