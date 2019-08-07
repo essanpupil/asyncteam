@@ -5,7 +5,7 @@ from company.models import Business, Page
 
 
 def home(request):
-    business = Business.objects.last()
+    business = Business.objects.prefetch_related('page_set', 'contact_set', 'card_set').last()
     business_pages = Page.objects.filter(business=business, display_in_navbar=True)
     return render(request, 'company/home.html', {'business': business, 'business_pages': business_pages})
 

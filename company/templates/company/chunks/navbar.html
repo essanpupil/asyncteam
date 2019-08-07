@@ -15,6 +15,9 @@
                 {% endfor %}
                 {% if user.is_authenticated %}
                 <li class="nav-item">
+                    <a class="nav-link" href="{% url 'timeline:dashboard' %}">Timeline</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="{% url 'account_logout' %}">Sign Out</a>
                 </li>
                 {% else %}
