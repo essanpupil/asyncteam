@@ -20,3 +20,7 @@ class PageView(DetailView):
         context['business'] = page.business
         context['business_pages'] = business_pages
         return context
+
+
+def dashboard(request):
+    return render(request, 'company/dashboard.html')

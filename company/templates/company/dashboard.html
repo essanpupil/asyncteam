@@ -10,7 +10,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Timeline Dashboard</title>
+  <title>AsyncTeam</title>
 
   <!-- Custom fonts for this template-->
   <link href="{% static 'company/vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
@@ -19,7 +19,7 @@
     rel="stylesheet">
 
   <!-- Custom styles for this template-->
-  <link href="{% static 'timeline/css/sb-admin-2.min.css' %}" rel="stylesheet">
+  <link href="{% static 'company/css/sb-admin-2.min.css' %}" rel="stylesheet">
 
 </head>
 
@@ -32,7 +32,7 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{% url 'company:dashboard' %}">
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
@@ -44,25 +44,10 @@
 
       <!-- Nav Item - Dashboard -->
       <li class="nav-item active">
-        <a class="nav-link" href="{% url 'timeline:dashboard' %}">
+        <a class="nav-link" href="{% url 'company:dashboard' %}">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
-
-      <!-- Divider -->
-      <hr class="sidebar-divider">
-
-      <!-- Nav Item - Timeline -->
-      <li class="nav-item active">
-        <a class="nav-link" href="{% url 'timeline:main' %}">
-          <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Main timeline</span></a>
-      </li>
-
-      <!-- Heading -->
-      <div class="sidebar-heading">
-        Timeline
-      </div>
 
       <!-- Divider -->
       <hr class="sidebar-divider">
@@ -82,7 +67,7 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Timeline tools:</h6>
-            <a class="collapse-item" href="buttons.html">Main </a>
+            <a class="collapse-item" href="{% url 'timeline:main' %}">Main </a>
             <a class="collapse-item" href="cards.html">Cards</a>
           </div>
         </div>
@@ -634,7 +619,7 @@
                 <div class="card-body">
                   <div class="text-center">
                     <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;"
-                      src="{% static 'timeline/img/undraw_posting_photo.svg' %}" alt="">
+                      src="{% static 'company/img/undraw_posting_photo.svg' %}" alt="">
                   </div>
                   <p>Add some quality, svg illustrations to your project courtesy of <a target="_blank" rel="nofollow"
                       href="https://undraw.co/">unDraw</a>, a constantly updated collection of beautiful svg images that
@@ -715,14 +700,14 @@
   <script src="{% static 'company/vendor/jquery-easing/jquery.easing.min.js' %}"></script>
 
   <!-- Custom scripts for all pages-->
-  <script src="{% static 'timeline/js/sb-admin-2.min.js' %}"></script>
+  <script src="{% static 'company/js/sb-admin-2.min.js' %}"></script>
 
   <!-- Page level plugins -->
   <script src="{% static 'company/vendor/chart.js/Chart.min.js' %}"></script>
 
   <!-- Page level custom scripts -->
-  <script src="{% static 'timeline/js/demo/chart-area-demo.js' %}"></script>
-  <script src="{% static 'timeline/js/demo/chart-pie-demo.js' %}"></script>
+  <script src="{% static 'company/js/demo/chart-area-demo.js' %}"></script>
+  <script src="{% static 'company/js/demo/chart-pie-demo.js' %}"></script>
 
 </body>
 

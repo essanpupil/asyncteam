@@ -4,5 +4,5 @@ from timeline import views
 
 app_name = 'timeline'
 urlpatterns = [
-    path('', views.dashboard, name='dashboard')
+    path('', views.MainTimeline.as_view(), name='main')
 ]

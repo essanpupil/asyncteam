@@ -1,5 +1,9 @@
-from django.shortcuts import render
+from django.views.generic import edit
+
+from .models import Flow
 
 
-def dashboard(request):
-    return render(request, 'timeline/dashboard.html')
+class MainTimeline(edit.CreateView):
+    model = Flow
+    fields = ['name']
+    template_name = 'timeline/main.html'
