@@ -1,6 +1,6 @@
 from django.shortcuts import redirect
-from django.urls import reverse
-from django.views.generic import edit, list
+from django.urls import reverse, reverse_lazy
+from django.views.generic import edit, list, DeleteView
 
 from timeline.forms import FlowForm
 from .models import Flow
@@ -25,4 +25,9 @@ class NewTimeline(edit.CreateView):
             new_flow.save()
             return redirect(reverse('timeline:main'))
         else:
-            return flow_form.invalis()
+            return flow_form.invalid()
+
+
+class DeleteTimeline(DeleteView):
+    model = Flow
+    success_url = reverse_lazy('timeline:main')
