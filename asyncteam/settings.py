@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'company.apps.CompanyConfig',
     'account_profile.apps.AccountProfileConfig',
 
+    'crispy_forms',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
@@ -151,3 +152,5 @@ INTERNAL_IPS = [
 ]
 
 LOGIN_REDIRECT_URL = '/dashboard/'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'

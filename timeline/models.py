@@ -9,7 +9,7 @@ class Flow(models.Model):
     is_master = models.BooleanField(default=True)
     start = models.DateTimeField(auto_now_add=True)
     end = models.DateTimeField(null=True)
-    parent = models.ForeignKey('self', on_delete=models.CASCADE)
+    parent = models.ForeignKey('self', on_delete=models.CASCADE, null=True, blank=True)
 
     def __str__(self):
         return self.name
