@@ -43,9 +43,9 @@ INSTALLED_APPS = [
     'django_extensions',
 
     'timeline.apps.TimelineConfig',
-    'company.apps.CompanyConfig',
     'account_profile.apps.AccountProfileConfig',
 
+    'djbusiness',
     'crispy_forms',
     'allauth',
     'allauth.account',
@@ -154,3 +154,8 @@ INTERNAL_IPS = [
 LOGIN_REDIRECT_URL = '/dashboard/'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+BUSINESS_CONFIG = {
+    'login_url': '/accounts/login/',
+    'register_url': '/accounts/signup/'
+}

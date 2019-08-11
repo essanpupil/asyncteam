@@ -1,0 +1,73 @@
+{% extends 'djbusiness/chunks/base.html' %}
+{% block page_title %}<title>Welcom to {{ company.name }}</title>{% endblock %}
+{% block page_header %}
+<header class="bg-primary py-5 mb-5">
+    <div class="container h-100">
+        <div class="row h-100 align-items-center">
+            <div class="col-lg-12">
+                <h1 class="display-4 text-white mt-5 mb-2">{{ company.tagline }}</h1>
+                <p class="lead mb-5 text-white-50">{{ company.description }}</p>
+            </div>
+        </div>
+    </div>
+</header>
+{% endblock %}
+{% block page_content %}
+<div class="container">
+    <div class="row">
+        {% if company.contact_set.all %}
+        <div class="col-md-8 mb-5">
+            <h2>What We Do</h2>
+            <hr>
+            {{ company.long_description }}
+        </div>
+        <div class="col-md-4 mb-5">
+            <h2>Contact Us</h2>
+            <hr>
+            <address>
+                <strong>{{ company.contact_set.all.0.name }}</strong>
+                <br>
+                {{ company.contact_set.all.0.address }}
+                <br>
+            </address>
+            <address>
+                {% if company.contact_set.all.0.phone %}
+                <abbr title="Phone">P:</abbr>
+                {{ company.contact_set.all.0.phone }}
+                {% endif %}
+                <br>
+                {% if company.contact_set.all.0.email %}
+                <abbr title="Email">E:</abbr>
+                <a href="mailto:{{ company.contact_set.all.0.email }}">{{ company.contact_set.all.0.email }}</a>
+                {% endif %}
+            </address>
+        </div>
+        {% else %}
+        <div class="col-md-12 mb-5">
+            <h2>What We Do</h2>
+            <hr>
+            {{ company.long_description }}
+        </div>
+        {% endif %}
+    </div>
+    <!-- /.row -->
+
+    <div class="row">
+        {% for card in company.card_set.all %}
+        <div class="col-md-4 mb-5">
+            <div class="card h-100">
+                <img class="card-img-top" src="{{ card.logo_file_path }}" alt="{{ card.name }}">
+                <div class="card-body">
+                    <h4 class="card-title">{{ card.name }}</h4>
+                    <p class="card-text">{{ card.html_code }}</p>
+                </div>
+                <div class="card-footer">
+                    <a href="{{ card.page.slug }}" class="btn btn-primary">Find Out More!</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <!-- /.row -->
+</div>
+{% endblock %}
