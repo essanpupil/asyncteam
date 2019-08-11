@@ -1,0 +1,7 @@
+image: python:3.7
+
+all_tests:
+  script:
+   - sh ./scripts/install.sh
+   - pytest
+  when: on_success
