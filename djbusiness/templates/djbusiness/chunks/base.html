@@ -46,6 +46,18 @@
                     {% endif %}
                 </li>
                 {% endfor %}
+                {% if user.is_authenticated != True %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% if login_url %}{{ login_url }}{% endif %}">Login
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="{% if register_url %}{{ register_url }}{% endif %}">Register
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+                {% endif %}
             </ul>
         </div>
     </div>

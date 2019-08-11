@@ -154,3 +154,8 @@ INTERNAL_IPS = [
 LOGIN_REDIRECT_URL = '/dashboard/'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+BUSINESS_CONFIG = {
+    'login_url': '/accounts/login/',
+    'register_url': '/accounts/signup/'
+}
