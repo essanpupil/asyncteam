@@ -43,9 +43,9 @@ INSTALLED_APPS = [
     'django_extensions',
 
     'timeline.apps.TimelineConfig',
-    'company.apps.CompanyConfig',
     'account_profile.apps.AccountProfileConfig',
 
+    'djbusiness',
     'crispy_forms',
     'allauth',
     'allauth.account',

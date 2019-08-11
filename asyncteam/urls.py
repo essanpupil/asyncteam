@@ -5,11 +5,10 @@ from django.views.generic import RedirectView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('favicon.ico', RedirectView.as_view(url='/static/company/favicon/favicon.ico')),
     path('accounts/', include('allauth.urls')),
     path('accounts/profile/', include('account_profile.urls')),
     path('timeline/', include('timeline.urls')),
-    path('', include('company.urls')),
+    path('', include('djbusiness.urls')),
 ]
 
 if settings.DEBUG:
