@@ -1,16 +1,18 @@
 from django.conf import settings
 from django.contrib import admin
 from django.urls import path, include
+from django.views.generic import RedirectView
 
-from asyncteam.views import dashboard
+from asyncteam.views import dashboard, homepage
 
 urlpatterns = [
+    path('favicon.ico', RedirectView.as_view(url='/static/favicon/favicon.ico')),
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
     path('accounts/profile/', include('account_profile.urls')),
     path('timeline/', include('timeline.urls')),
     path('dashboard/', dashboard, name='dashboard'),
-    path('', include('djbusiness.urls')),
+    path('', homepage, name='homepage'),
 ]
 
 if settings.DEBUG:

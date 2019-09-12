@@ -45,7 +45,6 @@ INSTALLED_APPS = [
     'timeline.apps.TimelineConfig',
     'account_profile.apps.AccountProfileConfig',
 
-    'djbusiness',
     'crispy_forms',
     'allauth',
     'allauth.account',
