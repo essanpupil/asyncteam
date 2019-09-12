@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Business Frontpage - Start Bootstrap Template</title>
+  <title>Welcome to AsyncTeam</title>
 
   <!-- Bootstrap core CSS -->
   <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
@@ -24,14 +24,14 @@
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#">Start Bootstrap</a>
+      <a class="navbar-brand" {% if user.is_authenticated %}href="{% url 'dashboard' %}"{% else %}href="{% url 'homepage' %}"{% endif %}>AsyncTeam</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Home
+            <a class="nav-link" href="{% url 'homepage' %}">Home
               <span class="sr-only">(current)</span>
             </a>
           </li>
@@ -39,10 +39,10 @@
             <a class="nav-link" href="#">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Services</a>
+            <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
+            <a class="nav-link" href="{% url 'account_login' %}">Login</a>
           </li>
         </ul>
       </div>
@@ -54,8 +54,8 @@
     <div class="container h-100">
       <div class="row h-100 align-items-center">
         <div class="col-lg-12">
-          <h1 class="display-4 text-white mt-5 mb-2">Business Name or Tagline</h1>
-          <p class="lead mb-5 text-white-50">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non possimus ab labore provident mollitia. Id assumenda voluptate earum corporis facere quibusdam quisquam iste ipsa cumque unde nisi, totam quas ipsam.</p>
+          <h1 class="display-4 text-white mt-5 mb-2">Remote Team Nice & Easy</h1>
+          <p class="lead mb-5 text-white-50">We help remote team coordination, communication & project tracking smoothly.</p>
         </div>
       </div>
     </div>
