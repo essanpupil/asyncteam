@@ -3,8 +3,6 @@ from django.contrib.staticfiles.testing import StaticLiveServerTestCase
 from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
 
-from company.models import Business, Page
-
 
 class IntegrationTest(StaticLiveServerTestCase):
 
@@ -15,24 +13,6 @@ class IntegrationTest(StaticLiveServerTestCase):
 
     def tearDown(self) -> None:
         self.browser.close()
-
-    def create_business(self) -> Business:
-        business = Business(name="AsyncTeam")
-        business.save()
-        self.business = business
-        return business
-
-    def create_nav_page(self, business) -> Page:
-        page = Page(
-            business=business,
-            name="About Us",
-            slug="about-us",
-            display_in_navbar=True,
-            html_code="We are fighting dreamer",
-        )
-        page.save()
-        self.page = page
-        return page
 
     def create_user(self, username='john', password='doe'):
         user = get_user_model().objects.create(
@@ -47,7 +27,6 @@ class IntegrationTest(StaticLiveServerTestCase):
         return user
 
     def logging_in_user(self, user, user_password) -> None:
-        self.create_business()
         self.browser.get(self.live_server_url)
         signin_nav = self.browser.find_element_by_link_text('Sign In')
         signin_nav.click()
