@@ -1,0 +1,11 @@
+{% extends 'chunks/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block page_title %}All Project{% endblock %}
+{% block page_content %}
+<h1>All Project</h1>
+<hr />
+{% for item in object_list %}
+{{ item }}
+{% endfor %}
+{% endblock %}
