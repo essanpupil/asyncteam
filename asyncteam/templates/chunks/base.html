@@ -94,6 +94,17 @@
         </a>
       </li>
       <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="tasksDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="fas fa-fw fa-folder"></i>
+          <span>Projects</span>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="tasksDropdown">
+          <a class="dropdown-item" href="{% url 'project_management:project_dashboard' %}">List Project</a>
+          <a class="dropdown-item" href="{% url 'project_management:new_project' %}">Create Project</a>
+        </div>
+      </li>
+      </li>
+      <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fas fa-fw fa-folder"></i>
           <span>Pages</span>
@@ -146,7 +157,7 @@
       <footer class="sticky-footer">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright © Your Website 2019</span>
+            <span>Copyright © AsyncTeam 2019</span>
           </div>
         </div>
       </footer>

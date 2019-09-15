@@ -11,6 +11,7 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     path('accounts/profile/', include('account_profile.urls')),
     path('timeline/', include('timeline.urls')),
+    path('project/', include('project_management.urls')),
     path('dashboard/', dashboard, name='dashboard'),
     path('', homepage, name='homepage'),
 ]
