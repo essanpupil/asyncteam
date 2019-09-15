@@ -1,5 +1,4 @@
 import pytest
-from pytest import skip
 
 from integrationtests.base_testing import IntegrationTest
 
