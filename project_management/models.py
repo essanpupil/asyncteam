@@ -9,7 +9,7 @@ class Project(models.Model):
     creator = models.ForeignKey(User, on_delete=models.CASCADE, related_name='project_creator')
     member = models.ManyToManyField(User, related_name='project_member')
     start = models.DateTimeField(default=now)
-    end = models.DateTimeField(null=True)
+    end = models.DateTimeField(null=True, blank=True)
 
     def __str__(self):
         return self.name
