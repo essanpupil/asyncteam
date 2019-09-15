@@ -1,0 +1,13 @@
+{% extends 'chunks/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block page_title %}New Project{% endblock %}
+{% block page_content %}
+<h1>New Project</h1>
+<hr />
+<form method="post" class="uniForm">{% csrf_token %}
+    {{ form|crispy }}
+    <input type="submit" class="btn btn-primary" value="Save New Project">
+    <input type="reset" class="btn btn-warning" value="Clear Data Project">
+</form>
+{% endblock %}

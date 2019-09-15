@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django_extensions',
 
     'timeline.apps.TimelineConfig',
+    'project_management.apps.ProjectManagementConfig',
     'account_profile.apps.AccountProfileConfig',
 
     'crispy_forms',

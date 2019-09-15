@@ -28,9 +28,9 @@ class IntegrationTest(StaticLiveServerTestCase):
 
     def logging_in_user(self, user, user_password) -> None:
         self.browser.get(self.live_server_url)
-        signin_nav = self.browser.find_element_by_link_text('Sign In')
+        signin_nav = self.browser.find_element_by_link_text('Login')
         signin_nav.click()
-        self.assertEqual(self.browser.title, 'Sign In to AsyncTeam')
+        self.assertEqual('Login to AsyncTeam', self.browser.title)
 
         username_input = self.browser.find_element_by_id('id_login')
         username_input.send_keys(user.username)
@@ -38,5 +38,5 @@ class IntegrationTest(StaticLiveServerTestCase):
         password_input = self.browser.find_element_by_id('id_password')
         password_input.send_keys(user_password)
 
-        signin_button = self.browser.find_element_by_class_name('primaryAction')
+        signin_button = self.browser.find_element_by_id('IdLogin')
         signin_button.click()
