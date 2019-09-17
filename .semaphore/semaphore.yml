@@ -103,8 +103,8 @@ blocks:
           - pip install codecov
       jobs:
         - name: Upload code coverage
-          - commands:
-              - codecov --token=$CODECOV_TOKEN
+          commands:
+            - codecov --token=$CODECOV_TOKEN
 
 
   - name: "Run Security Tests"
