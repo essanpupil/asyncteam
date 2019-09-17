@@ -82,24 +82,21 @@ blocks:
       prologue:
         commands:
           - sem-version python 3.7
-          # Start a MySQL database. On Semaphore, databases run in the same
-          # environment as your code.
-          # See https://docs.semaphoreci.com/article/32-ubuntu-1804-image#databases-and-services
-          # Also https://docs.semaphoreci.com/article/54-toolbox-reference#sem-service
           - checkout
           - cache restore
           - pip install -r requirements.txt --cache-dir .pip_cache
       jobs:
         - name: Tests
           commands:
-            # Run browser tests on Google Chrome.
-            # On Semaphore, browsers are already installed.
             - pytest
 
   - name: "Analyze code coverage"
     task:
       prologue:
         commands:
+          - sem-version python 3.7
+          - checkout
+          - cache restore
           - pip install codecov
       jobs:
         - name: Upload code coverage
