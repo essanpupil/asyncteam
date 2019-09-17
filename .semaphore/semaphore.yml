@@ -92,6 +92,8 @@ blocks:
 
   - name: "Analyze code coverage"
     task:
+      secrets:
+        - name: codecov
       prologue:
         commands:
           - sem-version python 3.7
