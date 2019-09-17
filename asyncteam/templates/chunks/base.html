@@ -99,7 +99,7 @@
           <span>Projects</span>
         </a>
         <div class="dropdown-menu" aria-labelledby="tasksDropdown">
-          <a class="dropdown-item" href="{% url 'project_management:project_dashboard' %}">List Project</a>
+          <a class="dropdown-item {% if request.path == '/project/' %}active{% endif %}" href="{% url 'project_management:project_dashboard' %}">List Project</a>
           <a class="dropdown-item {% if request.path == '/project/new' %}active{% endif %}" href="{% url 'project_management:new_project' %}">New Project</a>
         </div>
       </li>
