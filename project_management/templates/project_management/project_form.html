@@ -5,9 +5,9 @@
 {% block page_content %}
 <h1>New Project</h1>
 <hr />
-<form method="post" class="uniForm">{% csrf_token %}
+<form method="post" class="uniForm" name="new-project">{% csrf_token %}
     {{ form|crispy }}
-    <input type="submit" class="btn btn-primary" value="Save New Project">
+    <input type="submit" class="btn btn-primary" id="saveProject" value="Save New Project">
     <input type="reset" class="btn btn-warning" value="Clear Data Project">
 </form>
 {% endblock %}
