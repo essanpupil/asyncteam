@@ -96,6 +96,16 @@ blocks:
             # On Semaphore, browsers are already installed.
             - pytest
 
+  - name: "Analyze code coverage"
+    task:
+      prologue:
+        commands:
+          - pip install codecov
+      jobs:
+        - name: Upload code coverage
+          - commands:
+              - codecov --token=$CODECOV_TOKEN
+
 
   - name: "Run Security Tests"
     task:
