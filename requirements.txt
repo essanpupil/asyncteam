@@ -11,7 +11,7 @@ colorama==0.4.1
 coverage==4.5.4
 decorator==4.4.0
 defusedxml==0.6.0
-Django==2.2.5
+Django==2.2.21
 django-allauth==0.39.1
 django-appconf==1.0.3
 django-avatar==4.1.0
